@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+<body style="width: 100%; height: 100%;">
+    <header style="width: 100%; height: 600px;">
+
+        <div id="slider">  
+            <div class="slides" style="background-color: violet;">  
+              <h1 style="text-align: center; padding-top: 250px;">1</h1>
+            </div>
+              
+            <div class="slides" style="background-color: springgreen;">  
+              <h1 style="text-align: center; padding-top: 250px;">2</h1>
+            </div>
+              
+            <div class="slides" style="background-color: rgb(114, 186, 235);">  
+              <h1 style="text-align: center; padding-top: 250px;">3</h1>
+            </div> 
+              
+            <div class="slides" style="background-color: tomato;">  
+              <h1 style="text-align: center; padding-top: 250px;">4</h1>
+            </div> 
+              
+            <div class="slides" style="background-color: yellow;">  
+              <h1 style="text-align: center; padding-top: 250px;">5</h1>
+            </div>  
+              
+            <div id="dot">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+          
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        @keyframes fade{
+            from{
+              opacity:0.4;
+            }
+            to{
+              opacity:1;
+            }
+        }
+          
+          body{
+            background: #eee;
+          }
+          
+          #slider{
+            margin:0 auto;
+            width:100%;
+            overflow:hidden;
+          }
+          
+          .slides{
+            overflow:hidden;
+            animation-name:fade;
+            animation-duration:1s;
+            display:none;
+            width: 100%;
+            height: 600px;
+          }
+          
+          #dot{
+            margin:0 auto;
+            text-align:center;
+          }
+          .dot{
+            display:inline-block;
+            border-radius:50%;
+            background:#d3d3d3;
+            padding:8px;
+            margin:10px 5px;
+          }
+          
+          .active{
+            background:black;
+          }
+          
+          @media (max-width:567px){
+            #slider{
+              width:100%;
+          
+            }
+          }
+          
+          #heading{
+            display:block;
+            text-align:center;
+            font-size:2em;
+            margin:10px 0px;
+          
+          }
+    </style>
+          
+        <script>
+            var index = 0;
+          var slides = document.querySelectorAll(".slides");
+          var dot = document.querySelectorAll(".dot");
+          
+          function changeSlide(){
+          
+            if(index<0){
+              index = slides.length-1;
+            }
+            
+            if(index>slides.length-1){
+              index = 0;
+            }
+            
+            for(let i=0;i<slides.length;i++){
+              slides[i].style.display = "none";
+              dot[i].classList.remove("active");
+            }
+            
+            slides[index].style.display= "block";
+            dot[index].classList.add("active");
+            
+            index++;
+            
+            setTimeout(changeSlide,2000);
+            
+            }
+          
+            changeSlide();
+        </script>
+
+
+    <div class="row columns" style="width: 100%; height: 60px; position: absolute; margin-top: -630px;">
+        <div class="menu align-center expanded text-center SMN_effect-79" style="width: 100%; height: 60px; position: fixed; background-color: blueviolet;">
+            
+            <img src="" alt="img" style="width: 100px; height: 50px; float: left; margin-top: 20px; margin-left: 80px;">
+
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 50px;">Home</a>
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 20px;">Home</a>
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 20px;">Home</a>
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 20px;">Home</a>
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 20px;">Home</a>
+            <a href="#" style="float: left; margin-top: 20px; text-decoration: none; color: black; font-size: 15px; margin-left: 20px;">Home</a>
+
+            <img src="" alt="img" style="width: 50px; height: 50px; float: left; padding-top: 20px; margin-left: 500px;">
+            <img src="" alt="img" style="width: 50px; height: 50px; float: left; padding-top: 20px; margin-left: 20px; border-left: 1px solid #fff;">
+            <img src="" alt="img" style="width: 50px; height: 50px; float: left; padding-top: 20px; margin-left: 20px; border-left: 1px solid #fff;">
+
+<style>
+ *, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.SMN_effect-79 {
+	border: 2px solid #AEA8D3;
+	color: #FFF;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.SMN_effect-79 a:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	animation: menu 2s linear infinite;
+	border: 60px solid #AEA8D3;
+	opacity: 0;
+	transform: translateX(-100%) rotate(35deg);
+}
+
+@keyframes menu{
+	0%{
+		transform: translateX(-10%) rotate(10deg);
+	}
+
+	25%{
+		transform: translateX(-25%) rotate(20deg);
+	}
+
+	50%{
+		transform: translateX(-50%) rotate(30deg);
+	}
+
+	99%{
+		transform: translateX(-100%) rotate(35deg);
+	}
+
+	100%{
+		transform: translateX(0%) rotate(0deg);
+	}
+}
+
+.SMN_effect-79 a:after {
+	height: 400% !important;
+	opacity: 1;
+	color: #FFF;
+}
+
+</style>
+
+
+            <div class="flex">
+                <input type="checkbox" id="hmt" 
+                class="hidden-menu-ticker">
+
+                <label class="btn-menu" for="hmt">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+                </label>
+
+                <ul class="hidden-menu">
+                <li><a href="#">Link 1</a></li>  
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>  
+                </ul>
+            </div>
+
+        </div>
+    </div>
+        
+    </header>
+<style>
+    .hidden-menu {
+  display: block;
+  position: fixed;
+  list-style:none;
+  padding-top: 100px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: rgb(96, 245, 245);
+  opacity: 0.8;
+  height: 100%;
+  top: 0;
+  right: -200px;
+  transition: right .2s;
+  z-index: 2;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.hidden-menu-ticker {
+  display: none;
+}
+
+.btn-menu {
+  color: #fff;
+  
+  padding: 7px;
+  position: fixed;
+  top: 20px;
+  left: 1270px;
+  cursor: pointer;
+  transition: left .23s;
+  z-index: 3;
+  width: 40px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.btn-menu span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0 0;
+  transition: all .1s linear .23s;
+  position: relative;
+}
+.btn-menu span.first {
+  margin-top: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu {
+  right: 160px;
+}
+.hidden-menu-ticker:checked ~ .hidden-menu {
+  right: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+  transform: rotate(45deg);
+  top: 8px;
+  
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+  opacity: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+  transform: rotate(-45deg);
+  top: -8px;    
+}
+
+</style>
+
+</body>
+</html>
